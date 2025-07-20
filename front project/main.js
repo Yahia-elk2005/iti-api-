@@ -1,9 +1,9 @@
-// HTML elements
+
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
-const productsGrid = document.getElementById("productsGrid"); // <– Add this div to your HTML page
+const productsGrid = document.getElementById("productsGrid");
 
-// Fetch products from DummyJSON
+
 async function fetchProducts(query = '') {
   try {
     const endpoint = query
@@ -55,7 +55,7 @@ function displayProducts(products, container) {
   });
   
 }
-// Search button click event
+
 searchBtn.addEventListener('click', async () => {
   const query = searchInput.value.trim();
   if (query) {
@@ -64,7 +64,6 @@ searchBtn.addEventListener('click', async () => {
   }
 });
 
-// Enter key event
 searchInput.addEventListener('keypress', async (e) => {
   if (e.key === 'Enter') {
     const query = searchInput.value.trim();
@@ -75,9 +74,9 @@ searchInput.addEventListener('keypress', async (e) => {
   }
 });
 
-// Initial load
+
 async function init() {
-  const products = await fetchProducts(); // ← no query means fetch all
+  const products = await fetchProducts(); 
   displayProducts(products, productsGrid);
 }
 
