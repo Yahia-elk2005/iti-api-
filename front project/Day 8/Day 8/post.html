@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="addProductForm">
+        <input type="text" placeholder="Product Name" id="productName" required>
+        <input type="number" placeholder="price" id="productPrice" required>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <div id="productList"></div>
+
+    <script>
+        async function fetchProducts(){
+            try {
+                const response = await fetch('https://dummyjson.com/products');
+                if (!response.ok) throw new Error("Failed to fetch the products! :(");
+
+                const data = await response.json();
+                const products = data.products;
+                const productList = document.getElementById("productList");
+
+                productList.innerHTML = '';
+
+                products.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'product';
+
+                    productDiv.innerHTML = `
+                        <h3>Title: ${product.title}</h3>
+                        <p> Price: ${product.price}</p>
+                        <p>Stock: ${product.stock}</p>
+                        <img src="${product.images[0]}" alt="product image" width="100">
+                    `;
+                    productList.appendChild(productDiv);
+                });
+            } catch (error) {
+                const productList = document.getElementById("productList");
+                productList.innerHTML = `<p style="color:red;"> Error: ${error.message}</p>`;
+            }
+        }
+
+        document.getElementById("addProductForm").addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("productName");
+            const price = document.getElementById("productPrice");
+
+            const newProduct = {
+                title: name.value,
+                price: Number(price.value)
+            };
+
+            try {
+                const response = await fetch('https://dummyjson.com/products/add', {
+                    method: 'POST',
+                    headers : {
+                        'Content-Type': 'application/json',
+                    }, 
+                    body: JSON.stringify(newProduct)
+                });
+
+                if (!response.ok) throw new Error ("Failed to add a product");
+
+                const data = await response.json();
+                console.log("Product Added:", data);
+
+                fetchProducts();
+            } catch (error) {
+                console.error("Error", error);
+            }
+        });
+
+        fetchProducts();
+    </script>
+</body>
+
+</html>

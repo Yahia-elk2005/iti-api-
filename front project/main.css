@@ -1,0 +1,837 @@
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+    background-color: #009990;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div{
+    margin: 10px;
+}
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 80px);
+    gap: 8px;
+    align-items: center;
+    background-color:#001A6E ;
+position: sticky;
+top: 0px;
+}
+header:hover {
+    background-color: #2431a8;
+    transition: background-color 0.3s,
+}
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#001A6E ;
+    border-radius: 0px 0px 20px 20px;
+    position: sticky;
+    top: 80px;
+}
+nav:hover {
+    background-color: #2431a8;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px 0 #2431a8;
+}
+section {    
+    grid-area: main;
+    display: grid;
+    place-items: center; /* This centers content both vertically and horizontally */
+    min-height: 300px;
+}
+
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#001A6E ;
+    border-radius:  10px 10px 0px 0px;
+}
+footer:hover {
+    background-color: #2431a8;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 -4px 20px 0 #2431a8;
+}
+.continar {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    margin: 10px;
+}
+.continar:hover {
+    background-color: #98DED9;
+    box-shadow: 0 4px 20px 0 #b0b5f4;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.hedcontener{
+    display: flex;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #009990;
+    border-radius: 30px;
+    padding: 6px 16px;
+    box-shadow: 0 2px 8px rgba(36, 49, 168, 0.10);
+    width: 600px;
+    margin-left: 5px;
+    margin-right: 80px;
+    grid-column: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.search-box input[type="text"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 8px 12px;
+    font-size: 1rem;
+    flex: 1;
+    color: #161D6F;
+}
+#searchInput::placeholder {
+    color: #161D6F;
+}
+.search-box button {
+    background: #161D6F;
+    color: #009990;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.search-box button:hover {
+    box-shadow: 0 4px 20px 0 #aae957;
+    transition:  box-shadow 0.3s;
+}
+.search-box:hover {
+    background: #C7FFD8;
+    box-shadow: 0 4px 20px 0 #E1FFBB;
+    transition:  box-shadow 0.3s, box-shadow 0.3s;
+}
+.login{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-left: 8px;
+}
+.login-btn {
+    background: #009990;
+    color: #001A6E;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.3rem; 
+}
+
+.login-btn:hover {
+    background: #C7FFD8;
+    box-shadow: 0 2px 8px #C7FFD8;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.slider-btn {
+    background: #009990;
+    color: #001A6E;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.slider{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    margin-left: 8px;
+}
+.slider-btn:hover {
+    background: #C7FFD8;
+    box-shadow: 0 4px 20px 0 #E1FFBB;
+    transition:  box-shadow 0.3s, box-shadow 0.3s;
+}
+
+body.night-mode {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+.mode-button {
+margin-right: 20px;
+margin-left: 8px;
+padding: 10px 16px;
+font-size: 14px;
+background-color: #009990;
+color: 001A6E;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+width: fit-content;
+height: fit-content;
+}
+
+.mode-button:hover {
+    background: #C7FFD8;
+    box-shadow: 0 4px 20px 0 #E1FFBB;
+    transition:  box-shadow 0.3s, box-shadow 0.3s;
+}
+body.night-mode header,
+body.night-mode nav,
+body.night-mode footer {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.night-mode nav:hover {
+    box-shadow: none;
+}
+
+
+body.night-mode .search-box {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.6);
+}
+
+body.night-mode .search-box input[type="text"] {
+    color: #f0f0f0;
+}
+
+body.night-mode .search-box button {
+    background-color: #444;
+    color: #C7FFD8;
+}
+
+body.night-mode .login-btn,
+body.night-mode .slider-btn,
+body.night-mode .mode-button {
+    background-color: #444;
+    color: #C7FFD8;
+}
+
+
+body.night-mode section {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+/* Cart container */
+body.night-mode .cart {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* Logo styling */
+body.night-mode .logo {
+    background-color: #2c2c2c;
+    
+}
+/* Span elements in night mode */
+body.night-mode .nightColor {
+    color: #C7FFD8; /* soft mint green for visibility */
+}
+body.night-mode.cridet_container i {
+    color: #C7FFD8; /* soft mint green for visibility */
+    background-color:#C7FFD8 ;
+}
+/* Cridet container (assuming it's a content section) */
+body.night-mode .cridet_container {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    background:#009990;
+    color: #001A6E;
+    border-radius: 24px;
+    padding: 8px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(36, 49, 168, 0.10);
+    transition: background 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.cart i {
+    font-size: 1.3rem;
+    margin-right: 8px;
+}
+
+.cart:hover {
+    background: #C7FFD8;
+    box-shadow: 0 4px 20px 0 #E1FFBB;
+}.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #009990;
+    padding: 8px 22px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(36, 49, 168, 0.10);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #001A6E;
+    grid-column-start: 5;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    gap: 10px;
+}
+.logo,
+.logo a {
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+    padding: 2px;
+    margin-left: 40px;
+}
+
+.logo span {
+    color: #001A6E;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+.logo:hover {
+    background: #C7FFD8;
+    box-shadow: 0 4px 20px 0 #E1FFBB;
+    transition:  box-shadow 0.3s, box-shadow 0.3s;
+}
+.cridet_container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #009990;
+    padding: 8px 22px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(36, 49, 168, 0.10);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #001A6E;
+}
+.cridet_container span {
+    color: #001A6E;
+}
+.cridet_container i {
+    color: #001A6E;
+    font-size: 1.3rem;
+    margin-right: 8px;
+}
+
+.cridet_container:hover {
+    background: #C7FFD8;
+    box-shadow: 0 4px 20px 0 #E1FFBB;
+}
+.social-icons {
+    grid-row-start: 5;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 9;
+}
+
+.social-icons a {
+    color: #009990;
+    background: #e6f0ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(36, 49, 168, 0.10);
+}
+
+.social-icons a:hover {
+    background: #009990;
+    color: #fff;
+    box-shadow: 0 4px 20px 0 #009990;
+}
+.location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #e6f0ff;
+    color: #009990;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(36, 49, 168, 0.08);
+    width: fit-content;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.location i {
+    background-color: #bdfdfd;
+    border-radius: 50%;
+    color: #009990;
+    font-size: 1.3rem;
+    padding: 6px;
+    margin-right: 6px;
+    transition: background 0.3s
+}
+.location:hover i {
+    background: #009990;
+    color: #fff;
+}
+.location:hover{
+    background: #009990;
+    color: #fff;
+    box-shadow: 0 4px 20px 0 #009990;
+}
+
+.work {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #e6f0ff;
+    color: #009990;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(36, 49, 168, 0.08);
+    width: fit-content;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.work i {
+    background-color: #bdfdfd;
+    border-radius: 50%;
+    color: #009990;
+    font-size: 1.3rem;
+    padding: 6px;
+    margin-right: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+.work:hover i {
+    background-color: #009990;
+    color: #fff;
+}
+.work:hover {
+    background: #009990;
+    color: #fff;
+    box-shadow: 0 4px 20px 0 #009990;
+}
+.downloud {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    grid-column: span 3 / span 3;
+    grid-row-start: 9;
+}
+
+.google-play-card {
+    height: 60px;  
+    width: 310px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.down{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #e6f0ff;
+    color: #009990;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(36, 49, 168, 0.08);
+    width: fit-content;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.down i {
+    background-color: #bdfdfd;
+    border-radius: 50%;
+    color: #009990;
+    font-size: 1.3rem;
+    padding: 6px;
+    margin-right: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+.down:hover i {
+    background-color: #009990;
+    color: #fff;
+}
+.down:hover {
+    background: #009990;
+    color: #fff;
+    box-shadow: 0 4px 20px 0 #009990;
+}
+
+.midfoter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    grid-column: span 3 / span 3;
+    grid-row-start: 9;
+}
+.prentlocation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 310px;
+    height: 60px;   
+    box-sizing: border-box;
+}
+.prentwork{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 310px;   
+    height: 60px;  
+    box-sizing: border-box;
+}
+
+/* Layout for the products section */
+#productsSection {
+  gap: 20px;
+  padding: 30px;
+  justify-items: center;
+   display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 30px;
+  scroll-behavior: smooth;
+}
+
+
+
+
+/* Container for each product card */
+#productsGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Individual product card */
+.product-card {
+  flex: 0 0 auto;
+  width: 300px;
+  box-shadow: 0 2px 7px #dfdfdf;
+  margin: 10px 0;
+  background: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Product image container */
+.product-tumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  padding: 40px;
+  background: #f0f0f0;
+}
+
+.product-tumb img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Product details section */
+.product-details {
+  padding: 20px 25px;
+}
+
+.product-catagory {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.product-details h4 a {
+  font-weight: 500;
+  margin-bottom: 12px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #363636;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+  color: #fbb72c;
+}
+
+.product-details p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  color: #999;
+}
+
+/* Bottom section with price and icons */
+.product-bottom-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding: 15px 25px;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #fbb72c;
+  font-weight: 600;
+}
+
+.product-price small {
+  font-size: 80%;
+  font-weight: 400;
+  text-decoration: line-through;
+  margin-right: 5px;
+  color: #999;
+}
+
+/* Icons section */
+.product-links a {
+  margin-left: 10px;
+  color: #ccc;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.product-links a:hover {
+  color: #fbb72c;
+}
+.product-links,
+.product-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Badge styling */
+
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr; /* Stack header items */
+        grid-template-rows: auto; /* Allow rows to adjust to content */
+        height: auto;
+        padding: 10px;
+        position: static; /* Remove sticky behavior for better mobile scrolling */
+    }
+
+    header .search-box {
+        width: 90%; /* Make search box take more width */
+        margin: 10px auto; /* Center it */
+        grid-column: auto; /* Remove specific grid column span */
+        grid-row: auto;
+    }
+
+    header .logo {
+        grid-column: auto; /* Remove specific grid column start */
+        margin: 10px auto; /* Center logo */
+        justify-content: center;
+        flex-direction: row; /* Keep logo and text together */
+        padding: 8px 15px; /* Adjust padding */
+    }
+    header .logo img {
+        margin-left: 0; /* Remove specific margin for mobile */
+    }
+    header .login,
+    header .slider,
+    header .mode-button,
+    header .cart {
+        margin: 5px auto; /* Adjust margins for stacking */
+        width: 90%; /* Make buttons take more width */
+        max-width: 300px; /* Limit button width */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation items */
+        top: 0; /* Remove sticky offset if header is static */
+        position: static; /* Remove sticky behavior for better mobile scrolling */
+        padding: 10px 0; /* Adjust padding */
+        border-radius: 0; /* Remove border radius if desired */
+    }
+    nav div {
+        margin: 5px 0; /* Adjust margin for stacked nav items */
+    }
+    nav .cart {
+        width: fit-content; /* Allow cart to size to content */
+        margin: 5px auto;
+    }
+
+
+    footer {
+        grid-template-columns: 1fr; /* Stack footer items */
+        height: auto;
+        padding: 15px;
+        text-align: center; /* Center text in footer */
+    }
+
+    footer > div { /* Target direct children of footer */
+        grid-column: auto; /* Remove specific grid column spans */
+        margin: 10px auto; /* Center items */
+    }
+
+    .social-icons,
+    .downloud,
+    .midfoter {
+        flex-direction: column; /* Stack icons and download links */
+        gap: 10px; /* Adjust gap for stacked items */
+        width: 100%;
+    }
+
+    .location,
+    .work,
+    .down,
+    .cridet_container {
+        width: 90%; /* Make these elements take more width */
+        margin: 10px auto; /* Center them */
+        justify-content: center;
+    }
+
+    .prentlocation,
+    .prentwork {
+        width: 100%; /* Make parent containers fill width */
+        height: auto;
+    }
+
+    .google-play-card {
+        width: 100%; /* Make download card responsive */
+        max-width: 310px; /* Keep max-width for readability */
+        height: auto;
+    }
+
+    #productsSection {
+        flex-wrap: wrap; /* Allow product cards to wrap to next line */
+        overflow-x: hidden; /* No horizontal scrolling when wrapped */
+        justify-content: center; /* Center cards when wrapped */
+        padding: 20px 10px;
+    }
+
+    .product-card {
+        width: 90%; /* Make product cards take more width on small screens */
+        max-width: 300px; /* Keep a maximum width */
+        margin: 15px 0; /* Adjust vertical margin */
+    }
+}
+
+/* Medium screens (769px to 1024px, typical for tablets and small laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        grid-template-columns: 1.5fr repeat(3, 1fr) 1.5fr; /* Adjust header columns */
+        padding: 10px;
+        grid-template-rows: auto;
+        height: auto;
+    }
+
+    header .search-box {
+        width: 90%;
+        margin-right: 20px;
+        grid-column: span 2 / span 2; /* Occupy 2 columns */
+    }
+    header .logo {
+        grid-column-start: 5; /* Keep logo on the right */
+        margin-right: 10px;
+    }
+
+    nav {
+        padding: 10px 20px;
+    }
+
+    footer {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More flexible columns */
+        gap: 20px;
+    }
+
+    .social-icons,
+    .downloud,
+    .midfoter {
+        flex-direction: row; /* Maintain row direction */
+        flex-wrap: wrap; /* Allow wrapping within these sections */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .location,
+    .work,
+    .down,
+    .cridet_container {
+        width: fit-content; /* Allow content to dictate width */
+        margin: 10px;
+    }
+
+    .product-card {
+        width: 280px; /* Slightly smaller cards or adjust as needed */
+    }
+}

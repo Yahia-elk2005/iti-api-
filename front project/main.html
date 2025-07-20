@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+</head>
+<body>
+    <header>
+<div class="logo">
+            <a href="main.html">
+                <img src="شعار أخضر وأزرق عصري تسوق عبر الإنترنت .png" alt="">
+                <span class="nightColor">Marketly</span>
+            </a> 
+        </div>
+        <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for product....">
+                <button id="searchBtn"><i class="fas fa-search" class="nightColor"></i>
+                </button>
+        </div>        
+    </header>
+
+    <nav>
+        
+    <div class="cart">
+        <i class="fas fa-shopping-cart" class="nightColor"></i>
+        <span class="nightColor">cart</span>
+    </div>
+        <div class="cridet_container">
+            <a href="card.html" target="_blank">
+                <i class="fas fa-credit-card" class="nightColor"></i>
+                <span class="nightColor">Add your credit card info</span>
+            </a>
+        </div>
+
+        <div class="hedcontener">
+    <div class="Nmode">
+<button id="modeToggle" class="mode-button" >
+            <i class="fas fa-moon" class="nightColor" class="nightColor"></i> 
+        </button>
+    </div>
+        <div class="login"> 
+            <a href="modern-login-signin-form.html" target="_blank">
+                <button class="login-btn">
+                    <i class="fas fa-user" class="nightColor"></i> 
+                </button>
+            </a>
+        </div>
+        
+        <div class="slider">
+            <button class="slider-btn">
+                <i class="fas fa-sliders-h" class="nightColor"></i>
+            </button>
+        </div>
+    </div>
+    </nav>
+    <section id="productsSection">
+        <div id="productsGrid" class="products-container"></div>
+    </section>
+
+    <footer>
+
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com" target="_blank" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+
+        <div class="midfoter">
+
+            <div class="prentwork">
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+                        <div class="work">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>To work with us</span>
+                        </div> 
+                </a>
+            </div>
+        
+            <div class="prentlocation"> 
+                    <a href="https://www.google.com/maps" target="_blank" title="Location">
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>you can find us here</span>
+                        </div>
+                    </a>
+            </div>
+
+        </div>
+
+
+
+        <div class="downloud"> 
+                <a href="https://play.google.com/store" target="_blank" class="google-play-card" title="Get it on Google Play">
+                    <div class="down">
+                        <i class="fab fa-google-play"></i>
+                        <span>Get our app</span>
+                    </div>
+                </a>
+        </div>
+
+        <script>
+  const modeToggle = document.getElementById('modeToggle');
+  modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('night-mode');
+    modeToggle.innerHTML = document.body.classList.contains('night-mode')
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
+  });
+</script>
+</footer>
+
+     <script src="main.js"></script> 
+    
+</body>
+</html>
