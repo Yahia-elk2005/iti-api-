@@ -26,7 +26,6 @@ class GuessNumber:
         self.logger = FileLogger("game_log.txt")
     
     def play(self):
-        self.logger.log(f"🕹️{self.player_name} started the game. The Secret Number: {self.secret_number}")
         while self.attempts > 0:
             try:
                 guess = int(input("Guess a Number between 1 to 10"))
@@ -56,7 +55,7 @@ class GameManager:
         try:
             player_name = input("Enter Your Name: ").strip()
             if not player_name:
-                print("Name cannot be empty.")
+                raise ValueError("Name cannot be empty.")
 
             game = GuessNumber(player_name)
             game.logger = self.logger  
